@@ -1,5 +1,6 @@
 <?php
 //Import data array
+//Requires data.php to exist for the function to work
 require('data.php');
 //Repetitively used function that can be looped for each membert
 function displayMember ($element,$i) {?>
