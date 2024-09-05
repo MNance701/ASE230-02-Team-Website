@@ -269,15 +269,10 @@ $i=$_GET['index'];
 									<?php for($a=0;$a<count($teamMember[$i]['awards']); $a++){?>
 								    <li class="mb-2 ps-4 position-relative">
 								        <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-								        <div class="resume-award-name">$teamMember[$i]['awards'][$a]</div>
+								        <div class="resume-award-name"><?php $teamMember[$i]['awards'][$a]?></div>
 								        <div class="resume-award-desc">Award desc goes here, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.</div>
 								    </li>
 									<?php }?>
-								    <li class="mb-0 ps-4 position-relative">
-								        <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-								        <div class="resume-award-name">Award Name Ipsum</div>
-								        <div class="resume-award-desc">Award desc goes here, ultricies nec, pellentesque.</div>
-								    </li>
 							    </ul>
 						    </div>
 					    </section><!--//interests-section-->
