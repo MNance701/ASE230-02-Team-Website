@@ -1,7 +1,7 @@
 <?php
 //Import data array
 require('data.php');
-
+//Repetitively used function that can be looped for each membert
 function displayMember ($element,$i) {?>
 	<header class="resume-header pt-4 pt-md-0">
 		<div class="row">
