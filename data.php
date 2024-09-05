@@ -14,11 +14,11 @@ $teamMember=[
         'website'=>'name.website.com',
         'summary'=>'lorem ipsum',
         'awards'=>[
-            'award 1'
+            'award 1',
             'award 2'
         ],
         'awards_desc'=>[
-            'lorem ipsum'
+            'lorem ipsum',
             'lorem ipsum numero dos'
         ]
     ]
