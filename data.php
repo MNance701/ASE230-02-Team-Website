@@ -1,5 +1,6 @@
 <?php
 //Put the data for the file in here
+//The data is used for both detail.php and index.php
 $teamMember=[
 	[
 		'firstname'=>'Name',
