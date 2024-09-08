@@ -43,18 +43,59 @@ $i=$_GET['index'];
 				    <div class="col">
 					    <div class="row p-4 justify-content-center justify-content-md-between">
 						    <div class="primary-info col-auto">
-							    <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">Your name</h1>
-							    <div class="title mb-3">Your desired job title</div>
+							    <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">
+								<?php 
+									for($i=0;$i<count($teamMember);$i++){
+										echo $teamMember[$i]['firstname'].' '.$teamMember[$i]['lastname'];	
+									}
+								?></h1>
+							    <div class="title mb-3">
+								<?php
+									for($i=0;$i<count($teamMember);$i++){
+										echo $teamMember[$i]['role'];
+									}
+								?>
+								</div>
 							    <ul class="list-unstyled">
-								    <li class="mb-2"><a class="text-link" href="#"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i>your@email.com</a></li>
-								    <li><a class="text-link" href="#"><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i>0123 456 78900</a></li>
+								    <li class="mb-2"><a class="text-link" href="#"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i>
+									<?php
+										for($i=0;$i<count($teamMember);$i++){
+											echo $teamMember[$i]['email'];
+										}
+									?>
+									</a></li>
+								    <li><a class="text-link" href="#"><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i>
+									<?php
+										for($i=0;$i<count($teamMember);$i++){
+											echo $teamMember[$i]['phone'];
+										}
+									?>
+									</a></li>
 							    </ul>
 						    </div><!--//primary-info-->
 						    <div class="secondary-info col-auto mt-2">
 							    <ul class="resume-social list-unstyled">
-					                <li class="mb-3"><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fab fa-linkedin-in fa-fw"></i></span>linkedin.com/in/yourlink</a></li>
-					                <li class="mb-3"><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fab fa-github-alt fa-fw"></i></span>github.com/yourhandle</a></li>
-					                <li><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fas fa-globe"></i></span>yourwebsite.com</a></li>
+					                <li class="mb-3"><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fab fa-linkedin-in fa-fw"></i></span>
+									<?php
+										for($i=0;$i<count($teamMember);$i++){
+											echo $teamMember[$i]['linkedIn'];
+										}
+									?>
+									</a></li>
+					                <li class="mb-3"><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fab fa-github-alt fa-fw"></i></span>
+									<?php
+										for($i=0;$i<count($teamMember);$i++){
+											echo $teamMember[$i]['git'];
+										}
+									?>
+									</a></li>
+					                <li><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fas fa-globe"></i></span>
+									<?php
+										for($i=0;$i<count($teamMember);$i++){
+											echo $teamMember[$i]['website'];
+										}
+									?>
+									</a></li>
 							    </ul>
 						    </div><!--//secondary-info-->
 					    </div><!--//row-->
@@ -66,7 +107,13 @@ $i=$_GET['index'];
 			    <section class="resume-section summary-section mb-5">
 				    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Summary</h2>
 				    <div class="resume-section-content">
-					    <p class="mb-0">Summarise your education and professional experience here. Add a couple of fun facts. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue elit ut nisi vehicula iaculis. Integer porta nisi erat, quis gravida quam dignissim ut. Nullam tincidunt mollis finibus. Vestibulum et diam vel tellus blandit convallis non id mauris. Curabitur feugiat tincidunt ante, ut iaculis sem. Sed eleifend fringilla diam, quis vehicula tellus fringilla sed. In sagittis commodo ipsum pulvinar sagittis. Ut et turpis sit amet erat elementum convallis ac eu ipsum. Aenean varius eget mi in mollis. Integer tempus diam libero, id blandit neque aliquam non. Maecenas eleifend leo ut pellentesque bibendum. Phasellus consectetur facilisis nunc, at ultricies nisi eleifend eget. Fusce molestie et orci non pulvinar. Aenean ac tristique orci, vitae viverra mi.</p>
+					    <p class="mb-0">
+						<?php
+							for($i=0;$i<count($teamMember);$i++){
+								echo $teamMember[$i]['summary'];
+							}
+						?>
+						</p>
 				    </div>
 			    </section><!--//summary-section-->
 			    <div class="row">
@@ -266,10 +313,15 @@ $i=$_GET['index'];
 						    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Awards</h2>
 						    <div class="resume-section-content">
 							    <ul class="list-unstyled resume-awards-list">
-									<?php for($a=0;$a<count($teamMember[$i]['awards']); $a++){?>
+									<?php for($a=0;$a<count($teamMember); $a++){?>
 								    <li class="mb-2 ps-4 position-relative">
 								        <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-								        <div class="resume-award-name"><?php $teamMember[$i]['awards'][$a]?></div>
+								        <div class="resume-award-name">
+										<?php 
+											foreach($teamMember[$i]['awards'] as $award)
+												echo '<li>'.$award.'</li>';
+										?>
+											</div>
 								        <div class="resume-award-desc">Award desc goes here, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.</div>
 								    </li>
 									<?php }?>
