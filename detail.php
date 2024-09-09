@@ -45,30 +45,22 @@ $i=$_GET['index'];
 						    <div class="primary-info col-auto">
 							    <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">
 								<?php 
-									for($i=0;$i<count($teamMember);$i++){
-										echo $teamMember[$i]['firstname'].' '.$teamMember[$i]['lastname'];	
-									}
+									echo $teamMember[$i]['firstname'].' '.$teamMember[$i]['lastname'];
 								?></h1>
 							    <div class="title mb-3">
 								<?php
-									for($i=0;$i<count($teamMember);$i++){
-										echo $teamMember[$i]['role'];
-									}
+									echo $teamMember[$i]['role'];
 								?>
 								</div>
 							    <ul class="list-unstyled">
 								    <li class="mb-2"><a class="text-link" href="#"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i>
 									<?php
-										for($i=0;$i<count($teamMember);$i++){
-											echo $teamMember[$i]['email'];
-										}
+										echo $teamMember[$i]['email'];
 									?>
 									</a></li>
 								    <li><a class="text-link" href="#"><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i>
 									<?php
-										for($i=0;$i<count($teamMember);$i++){
-											echo $teamMember[$i]['phone'];
-										}
+										echo $teamMember[$i]['phone'];
 									?>
 									</a></li>
 							    </ul>
@@ -77,23 +69,17 @@ $i=$_GET['index'];
 							    <ul class="resume-social list-unstyled">
 					                <li class="mb-3"><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fab fa-linkedin-in fa-fw"></i></span>
 									<?php
-										for($i=0;$i<count($teamMember);$i++){
-											echo $teamMember[$i]['linkedIn'];
-										}
+										echo $teamMember[$i]['linkedIn'];
 									?>
 									</a></li>
 					                <li class="mb-3"><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fab fa-github-alt fa-fw"></i></span>
 									<?php
-										for($i=0;$i<count($teamMember);$i++){
-											echo $teamMember[$i]['git'];
-										}
+										echo $teamMember[$i]['git'];
 									?>
 									</a></li>
 					                <li><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fas fa-globe"></i></span>
 									<?php
-										for($i=0;$i<count($teamMember);$i++){
-											echo $teamMember[$i]['website'];
-										}
+										echo $teamMember[$i]['website'];
 									?>
 									</a></li>
 							    </ul>
@@ -109,9 +95,7 @@ $i=$_GET['index'];
 				    <div class="resume-section-content">
 					    <p class="mb-0">
 						<?php
-							for($i=0;$i<count($teamMember);$i++){
-								echo $teamMember[$i]['summary'];
-							}
+							echo $teamMember[$i]['summary'];
 						?>
 						</p>
 				    </div>
@@ -296,55 +280,67 @@ $i=$_GET['index'];
 						    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Education</h2>
 						    <div class="resume-section-content">
 							    <ul class="list-unstyled">
-								    <li class="mb-2">
-								        <div class="resume-degree font-weight-bold">MSc in Computer Science</div>
-								        <div class="resume-degree-org">University College London</div>
-								        <div class="resume-degree-time">2013 - 2014</div>
-								    </li>
-								    <li>
-								        <div class="resume-degree font-weight-bold">BSc Maths and Physics</div>
-								        <div class="resume-degree-org">Imperial College London</div>
-								        <div class="resume-degree-time">2010 - 2013</div>
-								    </li>
+								<!--Loops through $education, using the array position in $education for $education_years and $education_degree-->
+								<?php for($e=0;$e<count($teamMember[$i]['education']); $e++){?>
+									<li class="mb-2">
+										<div class="resume-degree font-weight-bold"><?php echo $teamMember[$i]['education_degree'][$e]?></div>
+										<div class="resume-degree-org"><?php echo $teamMember[$i]['education'][$e]?></div>
+										<div class="resume-degree-time"><?php echo $teamMember[$i]['education_years'][$e]?></div>
+									</li>
+								<?php }?>
 							    </ul>
 						    </div>
 					    </section><!--//education-section-->
 					    <section class="resume-section reference-section mb-5">
 						    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Awards</h2>
 						    <div class="resume-section-content">
-							    <ul class="list-unstyled resume-awards-list">
-									<?php for($a=0;$a<count($teamMember); $a++){?>
-								    <li class="mb-2 ps-4 position-relative">
-								        <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-								        <div class="resume-award-name">
-										<?php 
-											foreach($teamMember[$i]['awards'] as $award)
-												echo '<li>'.$award.'</li>';
-										?>
-											</div>
-								        <div class="resume-award-desc">Award desc goes here, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.</div>
-								    </li>
-									<?php }?>
-							    </ul>
+							<ul class="list-unstyled resume-awards-list">
+								<!--Loop through each of the awards--> 
+								<!--This will only work properly if each award has its own description-->
+								<?php for($a=0;$a<count($teamMember[$i]['awards']); $a++){?>
+									<li class="mb-2 ps-4 position-relative">
+										<i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
+										<div class="resume-award-name">
+											<?php 
+												echo $teamMember[$i]['awards'][$a];
+											?>
+										</div>
+										<div class="resume-award-desc"><?php echo $teamMember[$i]['awards_desc'][$a];?></div>
+									</li>
+								<?php /*End of the loop*/}?>
+							</ul>
 						    </div>
 					    </section><!--//interests-section-->
 					    <section class="resume-section language-section mb-5">
 						    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Languages</h2>
 						    <div class="resume-section-content">
-							    <ul class="list-unstyled resume-lang-list">
-								    <li class="mb-2"><span class="resume-lang-name font-weight-bold">English</span> <small class="text-muted font-weight-normal">(Native)</small></li>
-								    <li class="mb-2 align-middle"><span class="resume-lang-name font-weight-bold">French</span> <small class="text-muted font-weight-normal">(Professional)</small></li>
-								    <li><span class="resume-lang-name font-weight-bold">Spanish</span> <small class="text-muted font-weight-normal">(Professional)</small></li>
-							    </ul>
+							<ul class="list-unstyled resume-lang-list">
+								<!--Uses l as a variable, not 1-->
+								<!--Loops through languages, using $l to determine the array position of $language_use-->
+								<?php for($l=0;$l<count($teamMember[$i]['languages']); $l++){?>
+									<li class="mb-2">
+										<span class="resume-lang-name font-weight-bold">
+											<?php 
+												echo $teamMember[$i]['languages'][$l];
+											?>
+										</span> 
+										<small class="text-muted font-weight-normal">
+											(<?php 
+												echo $teamMember[$i]['language_use'][$l];
+											?>)
+										</small>
+									</li>
+								<?php }?>
+							</ul>
 						    </div>
 					    </section><!--//language-section-->
 					    <section class="resume-section interests-section mb-5">
 						    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Interests</h2>
 						    <div class="resume-section-content">
 							    <ul class="list-unstyled">
-								    <li class="mb-1">Climbing</li>
-								    <li class="mb-1">Snowboarding</li>
-								    <li class="mb-1">Cooking</li>
+								<?php for($n=0;$n<count($teamMember[$i]['interests']); $n++){?>
+									<li class="mb-1"><?php echo $teamMember[$i]['interests'][$n];?></li>
+								<?php }?>
 							    </ul>
 						    </div>
 					    </section><!--//interests-section-->
@@ -354,36 +350,20 @@ $i=$_GET['index'];
 				<section class="resume-section experience-section mb-5">
 					<h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Projects</h2>
 					<div class="row mt-4">
-						<div class="col-md-4">
-							<div class="card">
-								<img src="path-to-project-image1.jpg" alt="Project 1" class="card-img-top">
-								<div class="card-body">
-									<h5 class="card-title">Project 1</h5>
-									<p class="card-text">Brief description of Project 1.</p>
-									<a href="btn btn-outline-primary" href="#">Go to link</a>
+						<!--Loops through-->
+						<?php for($p=0;$p<count($teamMember[$i]['projects']); $p++){?>
+							<div class="col-md-4">
+								<div class="card">
+									<img src=<?php echo $teamMember[$i]['project_img'][$p];?> alt=<?php echo "Project ".($p + 1);?> class="card-img-top">
+									<div class="card-body">
+										<!--Accounts for the project number, not the value of $p-->
+										<h5 class="card-title"><?php echo "Project ".($p + 1);?></h5>
+										<p class="card-text"><?php echo $teamMember[$i]['project_desc'][$p];?></p>
+										<a href="btn btn-outline-primary" href=<?php echo $teamMember[$i]['project_link'][$p];?>>Go to link</a>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="card">
-								<img src="path-to-project-image2.jpg" alt="Project 2" class="card-img-top">
-								<div class="card-body">
-									<h5 class="card-title">Project 2</h5>
-									<p class="card-text">Brief description of Project 2.</p>
-									<a href="btn btn-outline-primary" href="#">Go to link</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="card">
-								<img src="path-to-project-image3.jpg" alt="Project 3" class="card-img-top">
-								<div class="card-body">
-									<h5 class="card-title">Project 3</h5>
-									<p class="card-text">Brief description of Project 3.</p>
-									<a href="btn btn-outline-primary" href="#">Go to link</a>
-								</div>
-							</div>
-						</div>
+						<?php }?>
 					</div>
 				</section><!--//projects-section-->
 		    </div><!--//resume-body-->
@@ -392,12 +372,23 @@ $i=$_GET['index'];
 	    </div>
     </article> 
 
-    
     <footer class="footer text-center pt-2 pb-5">
 	    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-        <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by Your names</small>
+        <small class="copyright">Designed with <span class="sr-only">love</span>
+		<i class="fas fa-heart"></i> by 
+		<?php 
+			for($i=0;$i<count($teamMember); $i++){
+				echo $teamMember[$i]['firstname'].' '.$teamMember[$i]['lastname'];
+				if ($i!=count($teamMember)-1){
+					echo ', ';
+				}
+				else{
+					echo '.';
+				}
+			}
+		?>
+	</small>
     </footer>
-
     
 
 </body>
