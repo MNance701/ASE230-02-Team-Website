@@ -1,70 +1,200 @@
 <?php
-//Put the data for the file in here
-//The data is used for both detail.php and index.php
-$teamMember=[
-	[
-		'firstname'=>'Name3',
-		'lastname'=>'Example5',
-		'role'=>'role1',
-	        'picture'=>'img_src',
-	        'email'=>'user_email',
-	        'phone'=>'24305923',
-	        'linkedIn'=>'linkedin.com/',
-	        'git'=>'github.com/Name',
-	        'website'=>'name.website.com',
-	        'summary'=>'lorem ipsum',
-	        'awards'=>[
-	            'award 1',
-	            'award 2'
-	        ],
-	        'awards_desc'=>[
-	            'lorem ipsum',
-	            'lorem ipsum numero dos'
-        	],
-		'languages'=>[
-	            'English',
-	            'Spanish'
-	        ],
-	        'language_use'=>[
-	            'Native',
-	            'Not fluent, can speak a few phrases'
-	        ],
-	        'interests'=>[
-	            'interest1',
-	            'interest2',
-	            'interest3'
-	        ],
-	        'projects'=>[
-	            'project 1',
-	            'project 2',
-	            'project 3'
-	        ],
-	        'project_desc'=>[
-	            'project1 desc',
-	            'project2 desc',
-	            'project3 desc'
-	        ],
-	        'project_img'=>[
-	            'assets/images/Online_Website.png',
-	            'assets/images/trojan_screenshot.png',
-	            'assets/images/New_Char_1.png'
-	        ],
-	        'project_link'=>[
-	            'link1',
-	            'link2',
-	            'link3'
-	        ],
-	        'education'=>[
-	            'Northern Kentucky University',
-	            'Oldham County High School'
-	        ],
-	        'education_years'=>[
-	            '2023-Present',
-	            '2019-2023'
-	        ],
-	        'education_degree'=>[
-	            'BSc Cybersecurity',
-	            'High School Diploma'
-	        ]
-    	]
+
+$teamMember = [
+    [
+        'firstname' => 'Alice',
+        'lastname' => 'Smith',
+        'role' => 'Frontend Developer',
+        'picture' => 'https://example.com/img/alice.jpg',
+        'email' => 'alice.smith@example.com',
+        'phone' => '555-1234',
+        'linkedIn' => 'https://linkedin.com/in/alicesmith',
+        'git' => 'https://github.com/alicesmith',
+        'website' => 'https://alicesmith.dev',
+        'summary' => 'Passionate frontend developer with 5 years of experience in building responsive web applications.',
+        'awards' => [
+            'Best New Developer 2021',
+            'Employee of the Month - June 2022'
+        ],
+        'awards_desc' => [
+            'Recognized for outstanding contributions to the team.',
+            'Demonstrated exceptional performance and teamwork.'
+        ],
+        'languages' => [
+            'English',
+            'French'
+        ],
+        'language_use' => [
+            'Native',
+            'Conversational'
+        ],
+        'interests' => [
+            'Traveling',
+            'Photography',
+            'Cooking'
+        ],
+        'projects' => [
+            'Personal Portfolio',
+            'E-commerce Site',
+            'Blog Platform'
+        ],
+        'project_desc' => [
+            'A portfolio showcasing my work and skills.',
+            'An online store built with React and Node.js.',
+            'A blogging platform with user authentication and comments.'
+        ],
+        'project_img' => [
+            'assets/images/portfolio.png',
+            'assets/images/ecommerce.png',
+            'assets/images/blog.png'
+        ],
+        'project_link' => [
+            'https://alicesmith.dev',
+            'https://ecommerce-example.com',
+            'https://myblogplatform.com'
+        ],
+        'education' => [
+            'University of California, Berkeley',
+            'Springfield High School'
+        ],
+        'education_years' => [
+            '2015-2019',
+            '2011-2015'
+        ],
+        'education_degree' => [
+            'BSc in Computer Science',
+            'High School Diploma'
+        ]
+    ],
+    [
+        'firstname' => 'Bob',
+        'lastname' => 'Johnson',
+        'role' => 'Backend Developer',
+        'picture' => 'https://example.com/img/bob.jpg',
+        'email' => 'bob.johnson@example.com',
+        'phone' => '555-5678',
+        'linkedIn' => 'https://linkedin.com/in/bobjohnson',
+        'git' => 'https://github.com/bobjohnson',
+        'website' => 'https://bobjohnson.dev',
+        'summary' => 'Experienced backend developer specializing in APIs and database management.',
+        'awards' => [
+            'Top Performer 2022',
+            'Innovator Award 2023'
+        ],
+        'awards_desc' => [
+            'For exceptional coding skills and project delivery.',
+            'For implementing a new database solution.'
+        ],
+        'languages' => [
+            'English',
+            'German'
+        ],
+        'language_use' => [
+            'Native',
+            'Fluent'
+        ],
+        'interests' => [
+            'Gaming',
+            'Hiking',
+            'Reading'
+        ],
+        'projects' => [
+            'API for Mobile App',
+            'Data Analytics Dashboard',
+            'Internal Tool for Management'
+        ],
+        'project_desc' => [
+            'Developed a RESTful API for a mobile application.',
+            'Created a dashboard to visualize company data.',
+            'Built a tool to streamline management processes.'
+        ],
+        'project_img' => [
+            'assets/images/api.png',
+            'assets/images/dashboard.png',
+            'assets/images/tool.png'
+        ],
+        'project_link' => [
+            'https://api-example.com',
+            'https://dashboard-example.com',
+            'https://tool-example.com'
+        ],
+        'education' => [
+            'Georgia Institute of Technology',
+            'Lincoln High School'
+        ],
+        'education_years' => [
+            '2012-2016',
+            '2008-2012'
+        ],
+        'education_degree' => [
+            'BSc in Software Engineering',
+            'High School Diploma'
+        ]
+    ],
+    [
+        'firstname' => 'Charlie',
+        'lastname' => 'Davis',
+        'role' => 'UI/UX Designer',
+        'picture' => 'https://example.com/img/charlie.jpg',
+        'email' => 'charlie.davis@example.com',
+        'phone' => '555-8765',
+        'linkedIn' => 'https://linkedin.com/in/charliedavis',
+        'git' => 'https://github.com/charliedavis',
+        'website' => 'https://charliedavis.design',
+        'summary' => 'Creative UI/UX designer with a focus on user-centered design principles.',
+        'awards' => [
+            'Best Design 2022',
+            'Creative Thinker Award 2023'
+        ],
+        'awards_desc' => [
+            'Awarded for exceptional design work on key projects.',
+            'Recognized for innovative design solutions.'
+        ],
+        'languages' => [
+            'English',
+            'Italian'
+        ],
+        'language_use' => [
+            'Native',
+            'Basic'
+        ],
+        'interests' => [
+            'Design',
+            'Travel',
+            'Art'
+        ],
+        'projects' => [
+            'Redesign of Company Website',
+            'Mobile App Interface',
+            'User Research Study'
+        ],
+        'project_desc' => [
+            'Led the redesign project for the company website.',
+            'Designed a user-friendly interface for a mobile app.',
+            'Conducted user research to improve product design.'
+        ],
+        'project_img' => [
+            'assets/images/website_redesign.png',
+            'assets/images/mobile_app.png',
+            'assets/images/research_study.png'
+        ],
+        'project_link' => [
+            'https://company-website-redesign.com',
+            'https://mobile-app-example.com',
+            'https://user-research-study.com'
+        ],
+        'education' => [
+            'Rhode Island School of Design',
+            'Central High School'
+        ],
+        'education_years' => [
+            '2016-2020',
+            '2012-2016'
+        ],
+        'education_degree' => [
+            'BFA in Graphic Design',
+            'High School Diploma'
+        ]
+    ]
 ];
+?>
