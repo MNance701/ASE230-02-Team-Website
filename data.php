@@ -2,8 +2,8 @@
 
 $teamMember = [
     [
-        'firstname' => 'Alice',
-        'lastname' => 'Smith',
+        'firstname' => 'Aiden',
+        'lastname' => 'Gill',
         'role' => 'Frontend Developer',
         'picture' => 'https://example.com/img/alice.jpg',
         'email' => 'alice.smith@example.com',
@@ -67,7 +67,7 @@ $teamMember = [
         ]
     ],
     [
-        'firstname' => 'Bob',
+        'firstname' => 'Malachi',
         'lastname' => 'Johnson',
         'role' => 'Backend Developer',
         'picture' => 'https://example.com/img/bob.jpg',
@@ -132,7 +132,7 @@ $teamMember = [
         ]
     ],
     [
-        'firstname' => 'Charlie',
+        'firstname' => 'Clay',
         'lastname' => 'Davis',
         'role' => 'UI/UX Designer',
         'picture' => 'https://example.com/img/charlie.jpg',
